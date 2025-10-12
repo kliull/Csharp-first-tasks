@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace NAME
+
+namespace fifth
 {
     class Program
     {
@@ -8,12 +9,18 @@ namespace NAME
         {
             Console.WriteLine("Введите предложение");
             string str = Console.ReadLine();
-            int maxCountWords = 0;
             int sumLen = 0;
-            string[] listWords = str.Split(' ');
+            string symbols = ".,:;)()";
+            str = str.Replace("!", ".");
+            str = str.Replace("?", ".");
             string[] listSentances = str.Split('.');
+            foreach (char element in symbols)
+            {
+                str = str.Replace(element, " ");
+            }
+            string[] listWords = str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
             Dictionary<string, int> dictionary = new Dictionary<string, int>();
-            
             foreach (string word in listWords)
             {
                 sumLen += word.Length;
