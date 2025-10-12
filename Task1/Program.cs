@@ -5,11 +5,17 @@ namespace first
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите градусы в системе Фаренгейта");
+            Console.WriteLine("Введите градусы в системе Цельсия");
             string degreesCInput = Console.ReadLine();
-            double degreesC = Convert.ToInt32(degreesCInput);
-            double degreesF = (degreesC * 1.8) + 32;
-            Console.WriteLine($"{degreesC}°C = {degreesF}°F");
+            int degreesC;
+            bool isCorrect = int.TryParse(degreesCInput, out degreesC);
+            if (isCorrect)
+            {
+                double degreesF = (degreesC * 1.8) + 32;
+                Console.WriteLine($"{degreesC}°C = {degreesF}°F");
+            }
+            else
+                Console.WriteLine("Вы ввели не число");
         }
     }
 }
