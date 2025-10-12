@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace third
 {
     class Program
@@ -38,17 +39,17 @@ namespace third
                 {
                     Console.WriteLine("Слишком короткий. Необходимо больше 8 символов");
                 }
-                else if (digitsCount < 1)
+                if (digitsCount < 1)
                 {
-                    Console.WriteLine("не содержит ни одной цифры. Необходима 1 цифра");
+                    Console.WriteLine("Не содержит ни одной цифры. Необходима 1 цифра");
                 }
-                else if (lettersCount < 1)
+                if (lettersCount < 1)
                 {
-                    Console.WriteLine("не содержит ни одной заглавной буквы. Необходима 1 заглавная буква.");
+                    Console.WriteLine("Не содержит ни одной заглавной буквы. Необходима 1 заглавная буква.");
                 }
-                else if (symbolsCount < 1)
+                if (symbolsCount < 1)
                 {
-                    Console.WriteLine("не содержит ни одного спец знака. Необходим 1 символ из (!@#$%^&*)");
+                    Console.WriteLine("Не содержит ни одного спец знака. Необходим 1 символ из (!@#$%^&*)");
                 }
                 else
                 {
@@ -61,7 +62,6 @@ namespace third
                 }
                 password = Console.ReadLine();
             }
-
         }
     }
 }
